@@ -21,6 +21,16 @@ def get_sample_images(w, h):
     val_image = [
         read_imgfile('./hand1.jpg', w, h),
         read_imgfile('./hand2.jpg', w, h),
+        read_imgfile('./hand1.jpg', w, h),
+        read_imgfile('./hand2.jpg', w, h),
+        read_imgfile('./hand1.jpg', w, h),
+        read_imgfile('./hand2.jpg', w, h),
+        read_imgfile('./hand1.jpg', w, h),
+        read_imgfile('./hand2.jpg', w, h),
+        read_imgfile('./hand1.jpg', w, h),
+        read_imgfile('./hand2.jpg', w, h),
+        read_imgfile('./hand1.jpg', w, h),
+        read_imgfile('./hand2.jpg', w, h),
     ]
     return val_image
 

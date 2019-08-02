@@ -177,6 +177,8 @@ if __name__ == '__main__':
 
         last_log_epoch1 = last_log_epoch2 = -1
         while True:
+
+            logger.info('Running')
             _, gs_num = sess.run([train_op, global_step])
             curr_epoch = float(gs_num) / step_per_epoch
 
