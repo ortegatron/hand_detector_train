@@ -16,8 +16,8 @@ def get_network(type, placeholder_input, sess_for_load=None, trainable=True):
         net = CmuHandNetwork({'image': placeholder_input}, trainable=trainable)
         pretrain_path = 'numpy/openpose_coco.npy'
         last_layer = 'Mconv7_stage6_L{aux}'
-    elif type="vgg":
-        net = CmuNetwork({'image': placeholder_input}, trainable=trainable)
+    elif type=="vgg":
+        net = CmuHandNetwork({'image': placeholder_input}, trainable=trainable)
         pretrain_path = 'numpy/openpose_vgg16.npy'
         last_layer = 'Mconv7_stage6_L{aux}'
     else:
