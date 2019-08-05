@@ -82,9 +82,13 @@ class CmuHandNetwork(network_base.BaseNetwork):
              .conv(7, 7, 128, 1, 1, name='Mconv5_stage6')
              .conv(1, 1, 128, 1, 1, name='Mconv6_stage6'))
 
+        (self.feed('Mconv6_stage6')
+            .conv(1, 1, 22, 1, 1, relu=False, name='Mconv7_stage6'))
+
         with tf.variable_scope('Openpose'):
-            (self.feed('Mconv6_stage6')
-                .conv(1, 1, 22, 1, 1, relu=False, name='Mconv7_stage6'))
+            (self.feed('Mconv7_stage6')
+                 .concat(3, name='out'))
+
 
     def loss_l2(self):
          l2s = []
