@@ -26,8 +26,9 @@ if __name__ == '__main__':
     net, pretrain_path, last_layer = get_network("vgg", input_node)
 
     with tf.Session(config=config) as sess:
-        loader = tf.train.Saver(net.restorable_variables())
-        loader.restore(sess, pretrain_path)
+        net.load(pretrain_path, sess, True)
+        # loader = tf.train.Saver(net.restorable_variables())
+        # loader.restore(sess, pretrain_path)
 
         tf.train.write_graph(sess.graph_def, './tmp', 'graph_outfromruncheckpoint.pb', as_text=True)
 
