@@ -27,19 +27,6 @@ if __name__ == '__main__':
 
     with tf.Session(config=config) as sess:
         net.load(pretrain_path, sess, True)
-        # loader = tf.train.Saver(net.restorable_variables())
-        # loader.restore(sess, pretrain_path)
-
-        tf.train.write_graph(sess.graph_def, './tmp', 'graph_outfromruncheckpoint.pb', as_text=True)
-
+        tf.train.write_graph(sess.graph_def, './tmp', 'graph_definition.pb', as_text=True)
         flops = tf.profiler.profile(None, cmd='graph', options=tf.profiler.ProfileOptionBuilder.float_operation())
         print('FLOP = ', flops.total_float_ops / float(1e6))
-
-        # graph = tf.get_default_graph()
-        # for n in tf.get_default_graph().as_graph_def().node:
-        #     if 'concat_stage' not in n.name:
-        #         continue
-        #     print(n.name)
-
-        # saver = tf.train.Saver(max_to_keep=100)
-        # saver.save(sess, './tmp/chk', global_step=1)

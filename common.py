@@ -19,18 +19,8 @@ def read_imgfile(path, width=None, height=None):
 
 def get_sample_images(w, h):
     val_image = [
-        read_imgfile('./hand1.jpg', w, h),
-        read_imgfile('./hand2.jpg', w, h),
-        read_imgfile('./hand1.jpg', w, h),
-        read_imgfile('./hand2.jpg', w, h),
-        read_imgfile('./hand1.jpg', w, h),
-        read_imgfile('./hand2.jpg', w, h),
-        read_imgfile('./hand1.jpg', w, h),
-        read_imgfile('./hand2.jpg', w, h),
-        read_imgfile('./hand1.jpg', w, h),
-        read_imgfile('./hand2.jpg', w, h),
-        read_imgfile('./hand1.jpg', w, h),
-        read_imgfile('./hand2.jpg', w, h),
+        read_imgfile('images/hand_sample.png', w, h),
+        read_imgfile('images/hand_synth_sample.png', w, h),
     ]
     return val_image
 
