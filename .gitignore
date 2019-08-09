@@ -111,9 +111,9 @@ tmp
 models/graph/cmu*/*.pb
 models/train/*/checkpoint
 models/train/*/*.pb
-models/train/*/model-*.data-*
-models/train/*/model-*.index
-models/train/*/model-*.meta
+models/train/model-*.data-*
+models/train/model-*.index
+models/train/model-*.meta
 models/pretrained/resnet_v2_101/eval.graph
 models/pretrained/resnet_v2_101/train.graph
 src/pafprocess/pafprocess.py
