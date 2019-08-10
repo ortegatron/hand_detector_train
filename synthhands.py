@@ -60,7 +60,7 @@ class SynthHands(RNGDataFlow):
         self.is_train = is_train
         self.path = path
         self.idxs = []
-        for i in range(2,5):
+        for i in [2,3]:
             synth_idx = "synth" + str(i) + "/"
             path = self.path + "/" + synth_idx
             json_files = [f for f in glob.glob(path + "*.json")]
@@ -76,13 +76,13 @@ class SynthHands(RNGDataFlow):
             self.rng.shuffle(idxs)
         else:
             pass
-        for idx in self.idxs[0:5]:
+        for idx in self.idxs:
+            # self.path= "/home/marcelo/hands/hand_labels_synth/synth2/00000131.json"
             json_path = self.path + "/" + idx + ".json"
             img_url = self.path + "/" + idx + ".jpg"
 
             img_meta = {}
             img_meta['width'] , img_meta['height'] = Image.open(img_url).size
-
             with open(json_path) as json_file:
                 data = json.load(json_file)
                 annotation = {}
