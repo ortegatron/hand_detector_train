@@ -30,7 +30,7 @@ $ pip3 install -r requirements.txt
 
 Download openpose_vgg16.npy from http://www.mediafire.com/file/7e73ddj31rzw6qq/openpose_vgg16.npy and save into hand_detector_train/models/numpy. The VGG-16 first layers are taken from there to do the feature extraction.
 
-Download the [Hands from Synthetic Data Dataset ] (http://domedb.perception.cs.cmu.edu/panopticDB/hands/hand_labels_synth.zip), extract somewhere on your disk. We will refer to this folder as $HANDS_SNYTH_PATH.
+Download the [Hands from Synthetic Data Dataset](http://domedb.perception.cs.cmu.edu/panopticDB/hands/hand_labels_synth.zip), extract somewhere on your disk. We will refer to this folder as $HANDS_SNYTH_PATH.
 
 ### Training
 
