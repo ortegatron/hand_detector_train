@@ -32,7 +32,7 @@ if __name__ == '__main__':
     parser.add_argument('--input-height', type=int, default=368)
     parser.add_argument('--gpus', type=int, default=4)
     parser.add_argument('--checkpoint', type=str, default='')
-    parser.add_argument('--lr', type=str, default='0.001')
+    parser.add_argument('--lr', type=str, default='0.0001')
     parser.add_argument('--max-epoch', type=int, default=600)
     parser.add_argument('--tag', type=str, default='test')
     args = parser.parse_args()
@@ -173,8 +173,6 @@ if __name__ == '__main__':
 
         last_log_epoch1 = last_log_epoch2 = -1
         while True:
-
-            logger.info('Running')
             _, gs_num = sess.run([train_op, global_step])
             curr_epoch = float(gs_num) / step_per_epoch
 
@@ -223,7 +221,7 @@ if __name__ == '__main__':
                 sample_image = [enqueuer.last_dp[0][i] for i in range(4)]
                 outputMat = sess.run(
                     outputs,
-                    feed_dict={q_inp: np.array((sample_image + val_imag) * max(1, (args.batchsize // 16)))}
+                    feed_dict={q_inp: np.array((sample_image + val_image) * max(1, (args.batchsize // 8)))}
                 )
                 heatMat = outputMat[:, :, :, :19]
 

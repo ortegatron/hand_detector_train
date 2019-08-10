@@ -20,7 +20,9 @@ def read_imgfile(path, width=None, height=None):
 def get_sample_images(w, h):
     val_image = [
         read_imgfile('images/hand_sample.png', w, h),
-        read_imgfile('images/hand_synth_sample.png', w, h),
+        read_imgfile('images/hand_synth_sample1.jpg', w, h),
+        read_imgfile('images/hand_synth_sample2.jpg', w, h),
+        read_imgfile('images/hand_synth_sample3.jpg', w, h),
     ]
     return val_image
 
