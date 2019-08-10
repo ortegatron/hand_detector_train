@@ -4,7 +4,7 @@ Replicating the Openpose hand detection algorithm, training a similar Convolutio
 
 Original Openpose Repo(Caffe) : https://github.com/CMU-Perceptual-Computing-Lab/openpose
 
-Read the Medium story explaining this repository on:
+Read the Medium story explaining this repository on: https://medium.com/@apofeniaco/training-a-hand-detector-like-the-openpose-one-in-tensorflow-45c5177d6679
 
 ![Detection example](./images/detection-stages.png)
 
