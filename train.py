@@ -26,7 +26,7 @@ logger.addHandler(ch)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Training codes for Openpose using Tensorflow')
-    parser.add_argument('--datapath', type=str, default='/home/marcelo/hands/hand_labels_synth')
+    parser.add_argument('--datapath', type=str, default='../hand_labels_synth')
     parser.add_argument('--batchsize', type=int, default=64)
     parser.add_argument('--input-width', type=int, default=368)
     parser.add_argument('--input-height', type=int, default=368)
@@ -124,7 +124,7 @@ if __name__ == '__main__':
     valid_loss = tf.placeholder(tf.float32, shape=[])
     valid_loss_ll_heat = tf.placeholder(tf.float32, shape=[])
     sample_train = tf.placeholder(tf.float32, shape=(4, 640, 640, 3))
-    sample_valid = tf.placeholder(tf.float32, shape=(12, 640, 640, 3))
+    sample_valid = tf.placeholder(tf.float32, shape=(4, 640, 640, 3))
     train_img = tf.summary.image('training sample', sample_train, 4)
     valid_img = tf.summary.image('validation sample', sample_valid, 12)
     valid_loss_t = tf.summary.scalar("loss_valid", valid_loss)
