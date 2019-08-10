@@ -77,7 +77,6 @@ class SynthHands(RNGDataFlow):
         else:
             pass
         for idx in self.idxs:
-            # self.path= "/home/marcelo/hands/hand_labels_synth/synth2/00000131.json"
             json_path = self.path + "/" + idx + ".json"
             img_url = self.path + "/" + idx + ".jpg"
 
